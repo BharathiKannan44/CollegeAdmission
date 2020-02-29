@@ -1,0 +1,54 @@
+﻿@model CollegeAdmission.ViewModel.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<center>
+    <center>
+
+    <h2>Login</h2>
+    @Html.ActionLink("create new account", "Registration")
+
+    @if (TempData["Message"] != null)
+    {
+        <p>
+
+            @TempData["Message"].ToString()
+        </p>
+    }
+    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmailId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Password)
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.EmailId)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+                    @Html.TextBox("password")
+                    <p style="color: red;">
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+            </tr>
+        </table>
+    }
+</center>
+</center>
+
+
