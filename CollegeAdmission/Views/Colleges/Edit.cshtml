@@ -1,0 +1,40 @@
+﻿@model CollegeAdmission.ViewModel.CollegeViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+    <center>
+        <h2>Edit College</h2>
+
+        @using (Html.BeginForm("Edit", "Colleges", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <h4>College</h4>
+                @Html.HiddenFor(model => model.CollegeCode)
+
+                <div>
+                    @Html.LabelFor(model => model.CollegeName)
+                    <div>
+                        @Html.EditorFor(model => model.CollegeName)
+                        @Html.ValidationMessageFor(model => model.CollegeName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.CollegeWebsite)
+                    <div>
+                        @Html.EditorFor(model => model.CollegeWebsite)
+                        @Html.ValidationMessageFor(model => model.CollegeWebsite, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Save" />
+                </div>
+            </div>
+        }
+        <div>
+            @Html.ActionLink("Back to List", "DisplayCollege")
+        </div>
+
+    </center>

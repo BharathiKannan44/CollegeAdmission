@@ -1,0 +1,35 @@
+﻿@model CollegeAdmission.ViewModel.DepartmentViewModel
+
+@{
+    ViewBag.Title = "EditDepartment";
+}
+    <center>
+        <h2>Edit Department</h2>
+        @using (Html.BeginForm("EditDepartment", "Department", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                @Html.HiddenFor(model => model.Id)
+                <h4>College</h4>
+                @Html.HiddenFor(model => model.DeptId)
+
+                <div>
+                    @Html.LabelFor(model => model.AvailableSeats)
+                    <div>
+                        @Html.EditorFor(model => model.AvailableSeats)
+                        @Html.ValidationMessageFor(model => model.AvailableSeats, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Save" />
+                </div>
+            </div>
+        }
+        <div>
+            @Html.ActionLink("Back to List", "DisplayDepartmentByCollege")
+        </div>
+
+
+
+    </center>

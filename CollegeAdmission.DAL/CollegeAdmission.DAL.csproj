@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=6.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.0\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,20 @@
   <ItemGroup>
     <Compile Include="CollegeDBContext.cs" />
     <Compile Include="CollegeRepository.cs" />
+    <Compile Include="DepartmentRepository.cs" />
+    <Compile Include="Migrations\202003060627243_InitialCreate.cs" />
+    <Compile Include="Migrations\202003060627243_InitialCreate.designer.cs">
+      <DependentUpon>202003060627243_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003070513576_v-1.cs" />
+    <Compile Include="Migrations\202003070513576_v-1.designer.cs">
+      <DependentUpon>202003070513576_v-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003091759469_v-4.cs" />
+    <Compile Include="Migrations\202003091759469_v-4.designer.cs">
+      <DependentUpon>202003091759469_v-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
@@ -68,6 +83,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202003060627243_InitialCreate.resx">
+      <DependentUpon>202003060627243_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003070513576_v-1.resx">
+      <DependentUpon>202003070513576_v-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003091759469_v-4.resx">
+      <DependentUpon>202003091759469_v-4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

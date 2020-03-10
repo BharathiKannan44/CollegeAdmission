@@ -11,7 +11,7 @@
 
     @if (TempData["Message"] != null)
     {
-        <p>
+        <p  style="color: green;">
 
             @TempData["Message"].ToString()
         </p>
@@ -24,7 +24,7 @@
                     @Html.LabelFor(model => model.EmailId)
                 </td>
                 <td>
-                    @Html.TextBoxFor(model => model.Password)
+                    @Html.TextBoxFor(model => model.EmailId)
                     <p style="color: red;">
                         @Html.ValidationMessageFor(model => model.EmailId)
                     </p>
@@ -35,7 +35,7 @@
                    @Html.LabelFor(model => model.Password)
                 </td>
                 <td>
-                    @Html.TextBox("password")
+                    @Html.PasswordFor(model => model.Password)
                     <p style="color: red;">
                         @Html.ValidationMessageFor(model => model.Password)
                     </p>

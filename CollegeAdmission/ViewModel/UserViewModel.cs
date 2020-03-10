@@ -54,6 +54,7 @@ namespace CollegeAdmission.ViewModel
         public string Password { get; set; }
 
         [DisplayName("Confirm Password")]
+        [Compare("Password",ErrorMessage = "Password does not match")]
         [Required(ErrorMessage = "please enter Password")]
         [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessage = "Please enter valid password like uppercase,lowecase,symbol and number")]
         [StringLength(20, MinimumLength = 8, ErrorMessage = "Password should atleast contain 8 characters")]

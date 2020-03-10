@@ -14,6 +14,10 @@ namespace CollegeAdmission.BL
         {
             userRepository.SignUp(user);
         }
+        public User Login(string emailId,string password)
+        {
+            return userRepository.Login(emailId, password);
+        }
 
     }
 }

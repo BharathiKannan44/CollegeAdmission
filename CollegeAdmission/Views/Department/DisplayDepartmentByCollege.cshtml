@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CollegeAdmission.ViewModel.DepartmentViewModel>
+
+@{
+    ViewBag.Title = "DisplayDepartmentByCollege";
+}
+    <center>
+        <h2>Display Department</h2>
+        <p>
+            @Html.ActionLink("Add Department", "AddDepartment", new { code = TempData["CollegeCode"] })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeptId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AvailableSeats);
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @Html.HiddenFor(modelItem => item.Id)
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeptId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AvailableSeats);
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditDepartment", new { id = item.Id })
+                        @Html.ActionLink("Delete", "DeleteDepartment", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+        <p>
+            @Html.ActionLink("Save", "DisplayCollege", "Colleges")
+        </p>
+
+    </center>

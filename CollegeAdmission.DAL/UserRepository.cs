@@ -16,10 +16,11 @@ namespace CollegeAdmission.DAL
             collegeDBContext.SaveChanges();
         }
 
-        public void Login()
+        public User Login(string emailId,string password)
         {
             CollegeDBContext collegeDBContext = new CollegeDBContext();
-            
+            User user = collegeDBContext.User.Where(m => m.EmailId == emailId && m.Password == password).FirstOrDefault();
+            return user;
         }
     }
 }

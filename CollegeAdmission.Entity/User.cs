@@ -26,13 +26,11 @@ namespace CollegeAdmission.Entity
         [Required(ErrorMessage = "please enter Your Email Id")]
         public string EmailId { get; set; }
 
-        [Required(ErrorMessage = "please enter Your Phone Number")]
         public long PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "please enter Password")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "please enter Password")]
         public string Role { get; set; }
         public User()
         {

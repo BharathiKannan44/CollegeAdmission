@@ -42,6 +42,7 @@ namespace CollegeAdmission.Controllers
                 user.LastName = userViewModel.LastName;
                 user.Gender = userViewModel.Gender;
                 user.Dob = userViewModel.Dob;
+                user.PhoneNumber = userViewModel.PhoneNumber;
                 user.EmailId = userViewModel.EmailId;
                 user.Password = userViewModel.Password;
                 user.Role = Enum.GetName(typeof(Role), 0);
@@ -54,6 +55,22 @@ namespace CollegeAdmission.Controllers
 
         public ActionResult Login()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel loginViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                User user = userBL.Login(loginViewModel.EmailId, loginViewModel.Password);
+                if(user != null)
+                {
+                    return RedirectToAction("DisplayCollege", "Colleges");
+                }
+                TempData["Message"] = "Incorrect EmailId or password";
+                return View();             
+            }
             return View();
         }
     }

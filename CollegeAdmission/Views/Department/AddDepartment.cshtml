@@ -1,0 +1,49 @@
+﻿@model CollegeAdmission.ViewModel.DepartmentViewModel
+
+@{
+    ViewBag.Title = "AddDepartment";
+}
+@if(TempData["CollegeCode"].ToString() != null)
+{
+    TempData.Keep("CollegeCode");
+}
+    <center>
+        <h2>Add Department</h2>
+        @using (Html.BeginForm("AddDepartment", "Department", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <h4>College</h4>
+                <div>
+                    @Html.LabelFor(model => model.CollegeCode)
+                    <div>
+                        @Html.DisplayFor(model => model.CollegeCode)
+                    </div>
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.DeptId)
+                    <div>
+                        @Html.DropDownListFor(model => model.DeptId, (List<SelectListItem>)ViewBag.Dept, "--Select Dept--")
+                        @Html.ValidationMessageFor(model => model.DeptId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.AvailableSeats)
+                    <div>
+                        @Html.EditorFor(model => model.AvailableSeats)
+                        @Html.ValidationMessageFor(model => model.AvailableSeats, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Add" />
+                </div>
+            </div>
+        }
+        <div>
+            @Html.ActionLink("Back to List", "DisplayDepartmentByCollege")
+        </div>
+
+
+    </center>

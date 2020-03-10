@@ -10,5 +10,8 @@ namespace CollegeAdmission.DAL
 
         }
         public DbSet<User> User { get; set; }
+        public  DbSet<College> Colleges { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<CollegeDepartment> CollegeDepartments { get; set; }
     }
 }
