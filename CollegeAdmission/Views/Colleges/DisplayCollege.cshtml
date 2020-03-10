@@ -3,52 +3,50 @@
 @{
     ViewBag.Title = "DisplayCollege";
 }
-    <center>
-        <h2>Colleges</h2>
+<center>
+    <h2>Colleges</h2>
 
-        <p>
-            @Html.ActionLink("Add New College", "Create")
-        </p>
-        <table>
+    <p>
+        @Html.ActionLink("Add New College", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeWebsite)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.CollegeCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CollegeName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CollegeWebsite)
-                </th>
-                <th></th>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CollegeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollegeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollegeWebsite)
+                </td>
+                <td>
+                    @foreach (var dept in item.CollegeDepartments)
+                    {
+                        @Html.DisplayFor(modelItem => dept.Department.DeptName)
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { code = item.CollegeCode })
+                    @Html.ActionLink("Delete", "Delete", new { code = item.CollegeCode })
+                </td>
             </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-
-                        @Html.DisplayFor(modelItem => item.CollegeCode)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CollegeName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CollegeWebsite)
-                    </td>
-                    <td>
-                        @foreach (var dept in item.CollegeDepartments)
-                        {
-                            @Html.DisplayFor(modelItem => dept.Department.DeptName)
-                        }
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { code = item.CollegeCode })
-                        @Html.ActionLink("Delete", "Delete", new { code = item.CollegeCode })
-                    </td>
-                </tr>
-            }
-
-        </table>
-
-    </center>
+        }
+    </table>
+</center>
