@@ -3,16 +3,13 @@
 @{
     ViewBag.Title = "AddDepartment";
 }
-@if(TempData["CollegeCode"].ToString() != null)
-{
-    TempData.Keep("CollegeCode");
-}
+
     <center>
         <h2>Add Department</h2>
         @using (Html.BeginForm("AddDepartment", "Department", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-
+            @Html.HiddenFor(model => model.CollegeCode)
             <div>
                 <h4>College</h4>
                 <div>

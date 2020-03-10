@@ -8,7 +8,7 @@
         @using (Html.BeginForm("EditDepartment", "Department", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-
+            @Html.HiddenFor(model => model.CollegeCode)
             <div>
                 @Html.HiddenFor(model => model.Id)
                 <h4>College</h4>

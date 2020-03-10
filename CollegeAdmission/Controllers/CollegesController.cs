@@ -68,7 +68,8 @@ namespace CollegeAdmission.Controllers
             {
                 College college = AutoMapper.Mapper.Map<CollegeViewModel, College>(collegeViewModel);
                 collegeBL.UpdateCollege(college);
-                return RedirectToAction("DisplayDepartmentByCollege", "Department", collegeViewModel.CollegeCode);
+                TempData["CollegeCode"] = college.CollegeCode;
+                return RedirectToAction("DisplayDepartmentByCollege", "Department");
             }
             return View(collegeViewModel);
         }

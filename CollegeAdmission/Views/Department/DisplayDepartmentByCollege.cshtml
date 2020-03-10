@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "DisplayDepartmentByCollege";
 }
+@if(TempData["CollegeCode"] != null)
+{
+    TempData.Keep("CollegeCode");
+}
     <center>
         <h2>Display Department</h2>
         <p>

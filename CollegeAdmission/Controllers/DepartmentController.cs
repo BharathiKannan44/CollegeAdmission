@@ -22,10 +22,9 @@ namespace CollegeAdmission.Controllers
         {
             return View();
         }
-        public ActionResult DisplayDepartmentByCollege(string collegeCode)
+        public ActionResult DisplayDepartmentByCollege()
         {
-            List<CollegeDepartment> departmentList = departmentBL.GetDepartmentByCollege(collegeCode);
-            TempData["CollegeCode"] = collegeCode;
+            List<CollegeDepartment> departmentList = departmentBL.GetDepartmentByCollege(TempData["CollegeCode"].ToString());
             List<DepartmentViewModel> departmentViewModelList = new List<DepartmentViewModel>();
             foreach (CollegeDepartment department in departmentList)
             {
@@ -63,7 +62,8 @@ namespace CollegeAdmission.Controllers
             {
                 CollegeDepartment collegeDepartment = AutoMapper.Mapper.Map<DepartmentViewModel, CollegeDepartment>(departmentViewModel);
                 departmentBL.AddDepartmentByCollege(collegeDepartment);
-                return RedirectToAction("DisplayDepartmentByCollege",collegeDepartment.CollegeCode);
+                TempData["CollegeCode"] = collegeDepartment.CollegeCode;
+                return RedirectToAction("DisplayDepartmentByCollege");
             }
             return View();
         }
@@ -82,7 +82,8 @@ namespace CollegeAdmission.Controllers
             {
                 CollegeDepartment collegeDepartment = Mapper.Map<DepartmentViewModel, CollegeDepartment>(departmentViewModel);
                 departmentBL.EditDepartment(collegeDepartment);
-                return RedirectToAction("DisplayDepartmentByCollege",collegeDepartment.CollegeCode);
+                TempData["CollegeCode"] = collegeDepartment.CollegeCode;
+                return RedirectToAction("DisplayDepartmentByCollege");
             }
             return View();
         }
