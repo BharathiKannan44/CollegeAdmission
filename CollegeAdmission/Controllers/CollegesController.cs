@@ -53,7 +53,6 @@ namespace CollegeAdmission.Controllers
             }
             return View(collegeViewModel);
         }
-
         public ActionResult Edit(string code)
         {
             College college = collegeBL.GetCollegeByCode(code);
