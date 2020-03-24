@@ -4,33 +4,48 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CollegeAdmission.Entity
 {
+    //
+    //Summary:
+    //  Entity class for User 
     public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
-        [Required(ErrorMessage = "please enter Your Name")]
+        [Required]
+        [MaxLength(40)]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "please enter Your LastName")]
+        [Required]
+        [MaxLength(40)]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "please Select Gender")]
+        [Required]
+        [MaxLength(6)]
         public string Gender { get; set; }
 
-        [Required(ErrorMessage = "please enter Your DOB")]
+        [Required]
         [DataType(DataType.Date)]
         public DateTime Dob { get; set; }
 
-        [Required(ErrorMessage = "please enter Your Email Id")]
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [MaxLength(50)]
+        [Index(IsUnique = true)]
         public string EmailId { get; set; }
 
+        [Required]
+        [DataType(DataType.PhoneNumber)]
         public long PhoneNumber { get; set; }
 
-        [Required(ErrorMessage = "please enter Password")]
+        [Required]
+        [DataType(DataType.Password)]
+        [MaxLength(20)]
         public string Password { get; set; }
 
+        [Required]
+        [MaxLength(5)]
         public string Role { get; set; }
         public User()
         {

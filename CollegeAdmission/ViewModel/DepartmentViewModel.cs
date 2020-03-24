@@ -1,26 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CollegeAdmission.Entity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace CollegeAdmission.ViewModel
 {
+    //
+    //Summary:
+    //  model class for department 
     public class DepartmentViewModel
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         [DisplayName("Department")]
-        [Required(ErrorMessage = "please Select Department")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "SelectDepartment")]
         public string DeptId { get; set; }
+        public Department department { get; set; }
 
         [DisplayName("College")]
         public string CollegeCode { get; set; }
 
         [DisplayName("Available seats")]
-        [Required(ErrorMessage = "Please Enter Available Saets")]
-        [Range(10,500,ErrorMessage ="Seats should between 10 to 500")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "SeatsRequired")]
+        [Range(10,500, ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "SeatsRange")]
         public int AvailableSeats { get; set; }
 
         public DepartmentViewModel()

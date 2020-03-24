@@ -117,10 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>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</value>
+  <data name="Added" xml:space="preserve">
+    <value>Added sucessfully</value>
   </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <data name="AlreadyAdded" xml:space="preserve">
+    <value>The department is already added</value>
+  </data>
+  <data name="CodeRequired" xml:space="preserve">
+    <value>College code is Required</value>
+  </data>
+  <data name="CollegeExists" xml:space="preserve">
+    <value>This college already Exists</value>
+  </data>
+  <data name="CollegeNameRequired" xml:space="preserve">
+    <value>College Name is Required</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Deleted sucessfully</value>
+  </data>
+  <data name="DOBRequired" xml:space="preserve">
+    <value>Please enter your DOB</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Please enter Your Email Id</value>
+  </data>
+  <data name="ExistMailId" xml:space="preserve">
+    <value>This Mail Id already have an account</value>
+  </data>
+  <data name="GenderRequired" xml:space="preserve">
+    <value>Please select gender</value>
+  </data>
+  <data name="Incorrect" xml:space="preserve">
+    <value>Incorrect Email Id or Password</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Please enter valid code</value>
+  </data>
+  <data name="InvalidCollegeName" xml:space="preserve">
+    <value>Please enter valid college Name</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Please enter valid mail Id</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Please enter valid name</value>
+  </data>
+  <data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Please enter valid number</value>
+  </data>
+  <data name="InvalidWebsite" xml:space="preserve">
+    <value>please enter valid website</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Please enter your Name</value>
+  </data>
+  <data name="PasswordConstraint" xml:space="preserve">
+    <value>Please enter valid password like uppercase,lowecase,symbol and number</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Password should atleast contain 8 characters</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Please enter Password</value>
+  </data>
+  <data name="PhoneNumberRequired" xml:space="preserve">
+    <value>Please enter your Phone Number</value>
+  </data>
+  <data name="ReEnterPassword" xml:space="preserve">
+    <value>Passwords does not match. Re-enter password</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>Registered Sucessfully</value>
+  </data>
+  <data name="SeatsRange" xml:space="preserve">
+    <value>Seats should between 10 to 500</value>
+  </data>
+  <data name="SeatsRequired" xml:space="preserve">
+    <value>Please Enter Available seats</value>
+  </data>
+  <data name="SelectDepartment" xml:space="preserve">
+    <value>Please select Department</value>
+  </data>
+  <data name="WebsiteRequired" xml:space="preserve">
+    <value>College Website is required</value>
   </data>
 </root>

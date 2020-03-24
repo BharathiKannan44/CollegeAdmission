@@ -4,20 +4,48 @@ using System.Collections.Generic;
 
 namespace CollegeAdmission.BL
 {
-    public class CollegeBL
+    //
+    //Summmary:
+    //  Interface for College Business Layer
+    public interface ICollegeBL
     {
-        CollegeRepository collegeRepository;
+        IEnumerable<College> GetColleges();
+        bool AddCollege(College college);
+        College GetCollegeByCode(string id);
+        void UpdateCollege(College college);
+        void DeleteCollege(string code);
+    }
+
+    //
+    //Summary:
+    //  This Class provides method for Busines Logic based on Colleges
+    public class CollegeBL : ICollegeBL
+    {
+        ICollegeRepository collegeRepository;
+
+        //
+        //summary:
+        // Here create Instance for College Repository
         public CollegeBL()
         {
             collegeRepository = new CollegeRepository();
         }
+
         public IEnumerable<College> GetColleges()
         {
             return collegeRepository.GetColleges();
         }
-        public void AddCollege(College college)
+        //
+        //Summary:
+        // This Method Check the college is Exists or not and the Add to the Databae.
+        public bool AddCollege(College college)
         {
-            collegeRepository.AddCollege(college);
+            if(collegeRepository.CheckExistCollege(college) == null)
+            {
+                collegeRepository.AddCollege(college);
+                return true;
+            }
+            return false;
         }
         public College GetCollegeByCode(string id)
         {
@@ -31,14 +59,5 @@ namespace CollegeAdmission.BL
         {
             collegeRepository.DeleteCollege(code);
         }
-        public  IEnumerable<CollegeDepartment> GetDepartment(string collegeCode)
-        {
-            return collegeRepository.GetDepartment(collegeCode);
-        }
-        public List<Department> GetAllDepartments()
-        {
-            return collegeRepository.GetAllDepartments();
-        }
-      
     }
 }

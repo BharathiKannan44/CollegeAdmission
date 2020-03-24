@@ -1,16 +1,28 @@
 ﻿using CollegeAdmission.DAL;
 using CollegeAdmission.Entity;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CollegeAdmission.BL
 {
-    public class DepartmentBL
+    public interface IDepartmentBL
     {
-        DepartmentRepository departmentRepository;
+        CollegeDepartment GetDepartment(int id);
+        IEnumerable<CollegeDepartment> GetDepartmentByCollege(string collegeCode);
+        bool AddDepartmentByCollege(CollegeDepartment collegeDepartment);
+        IEnumerable<Department> GetDepartmentList();
+        void EditDepartment(CollegeDepartment collegeDepartment);
+        void DeleteDepartment(int id);
+    }
+    //
+    //Summary:
+    //  Business Class for Deprtments
+    public class DepartmentBL : IDepartmentBL
+    {
+        IDepartmentRepository departmentRepository;
+        //
+        //Summary:
+        //  Here Create Instance for Department Repository
         public DepartmentBL()
         {
             departmentRepository = new DepartmentRepository();
@@ -19,33 +31,33 @@ namespace CollegeAdmission.BL
         {
             return departmentRepository.GetDepartment(id);
         }
-        public List<CollegeDepartment> GetDepartmentByCollege(string collegeCode)
+        public IEnumerable<CollegeDepartment> GetDepartmentByCollege(string collegeCode)
         {
             return departmentRepository.GetDepartmentByCollege(collegeCode);
         }
-        public void AddDepartmentByCollege(CollegeDepartment collegeDepartment)
+        //
+        //Summary:
+        // This Method Check the Department is Exists or not and the Add to the Databae.
+        public bool AddDepartmentByCollege(CollegeDepartment collegeDepartment)
         {
-            departmentRepository.AddDepartmentByCollege(collegeDepartment);
+            if (departmentRepository.CheckExistsDepartment(collegeDepartment.DeptId, collegeDepartment.CollegeCode) == null)
+            {
+                departmentRepository.AddDepartmentByCollege(collegeDepartment);
+                return true;
+            }
+            return false;
         }
-        public List<Department> GetDepartmentList()
+        public IEnumerable<Department> GetDepartmentList()
         {
             return departmentRepository.GetDepartmentList();
-        }
-        public string GetDepartmentNameById(int id)
-        {
-            return departmentRepository.GetDepartmentNameById(id);
-        }
-        public int GetDepartmentId(string deptName)
-        {
-            return departmentRepository.GetDepartmentId(deptName);
         }
         public void EditDepartment(CollegeDepartment collegeDepartment)
         {
             departmentRepository.EditDepartment(collegeDepartment);
         }
-        public void DeleteDepartment(CollegeDepartment collegeDepartment)
+        public void DeleteDepartment(int id)
         {
-            departmentRepository.DeleteDepartment(collegeDepartment);
+            departmentRepository.DeleteDepartment(id);
         }
     }
 }

@@ -1,24 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CollegeAdmission.Entity
 {
+    //
+    //Summary:
+    //  Entity class(College) 
     public class College
     {
         [Key]
+        [MaxLength(8)]
         public string CollegeCode { get; set; }
 
+        [Required]
+        [Index(IsUnique = true)]
+        [MaxLength(100)]
         public string CollegeName { get; set; }
 
+        [Required]
+        [Index(IsUnique = true)]
+        [MaxLength(50)]
         public string CollegeWebsite { get; set; }
+
         public ICollection<CollegeDepartment> CollegeDepartments{ get; set; }
-        public ICollection<Department> Departments { get; set; }
         public College()
         {
         }

@@ -3,52 +3,24 @@
     ViewBag.Title = "Login";
 }
 
-<center>
-    <center>
-
+<div class="form">
     <h2>Login</h2>
-    @Html.ActionLink("create new account", "Registration")
-
     @if (TempData["Message"] != null)
     {
-        <p  style="color: green;">
-
+        <p style="color: green;">
             @TempData["Message"].ToString()
         </p>
     }
+
     @using (Html.BeginForm("Login", "User", FormMethod.Post))
     {
-        <table>
-            <tr>
-                <td>
-                    @Html.LabelFor(model => model.EmailId)
-                </td>
-                <td>
-                    @Html.TextBoxFor(model => model.EmailId)
-                    <p style="color: red;">
-                        @Html.ValidationMessageFor(model => model.EmailId)
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                   @Html.LabelFor(model => model.Password)
-                </td>
-                <td>
-                    @Html.PasswordFor(model => model.Password)
-                    <p style="color: red;">
-                        @Html.ValidationMessageFor(model => model.Password)
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="Login" />
-                </td>
-            </tr>
-        </table>
+        @Html.LabelFor(model => model.EmailId)
+        @Html.ValidationMessageFor(model => Model.EmailId)<br />
+        @Html.TextBoxFor(model => model.EmailId, "", new { @class = "textBox", @placeholder = "Enter your Email Id" })<br /><br />
+        @Html.LabelFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)<br />
+        @Html.PasswordFor(model => model.Password, new { @class = "textBox", @placeholder = "Enter password" })<br /><br />
+        <input class="btn-submit" style="margin-left: 5%" type="submit" value="Login" />
+        @Html.ActionLink("create new account", "Registration")
     }
-</center>
-</center>
-
-
+</div>

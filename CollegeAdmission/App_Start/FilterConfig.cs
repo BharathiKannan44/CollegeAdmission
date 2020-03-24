@@ -1,4 +1,4 @@
-﻿using System.Web;
+﻿using CollegeAdmission.Filters;
 using System.Web.Mvc;
 
 namespace CollegeAdmission
@@ -7,7 +7,8 @@ namespace CollegeAdmission
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new ExceptionFilter());
+            //filters.Add(new HandleErrorAttribute());
         }
     }
 }

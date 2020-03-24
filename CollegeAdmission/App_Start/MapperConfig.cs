@@ -1,10 +1,7 @@
 ﻿using CollegeAdmission.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using CollegeAdmission.ViewModel;
 
-namespace CollegeAdmission.ViewModel
+namespace CollegeAdmission.App_Start
 {
     public class MapperConfig
     {
@@ -12,10 +9,9 @@ namespace CollegeAdmission.ViewModel
         {
             AutoMapper.Mapper.Initialize(config =>
             {
-                config.CreateMap<CollegeDepartment,DepartmentViewModel>();
-                config.CreateMap<UserViewModel, User>();
+                config.CreateMap<CollegeDepartment, DepartmentViewModel>();
                 config.CreateMap<DepartmentViewModel, CollegeDepartment>();
-                config.CreateMap<CollegeViewModel, College>();
+                config.CreateMap<UserViewModel, User>();
                 config.CreateMap<CollegeViewModel, College>();
             });
         }

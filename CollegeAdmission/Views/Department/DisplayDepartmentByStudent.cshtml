@@ -1,24 +1,14 @@
 ﻿@model IEnumerable<CollegeAdmission.ViewModel.DepartmentViewModel>
 
 @{
-    ViewBag.Title = "DisplayDepartmentByCollege";
+    ViewBag.Title = "DisplayDepartmentByStudent";
 }
 @if (TempData["CollegeCode"] != null)
 {
     TempData.Keep("CollegeCode");
 }
 <center>
-
-    <h2>Display Department</h2>
-    <p>
-        @Html.ActionLink("Add Department", "AddDepartment", new { code = TempData["CollegeCode"] })
-    </p>
-    @if (TempData["Message"] != null)
-    {
-        <div style="color : green">
-            @TempData["Message"].ToString()
-        </div>
-    }
+    <h2>Departments</h2>
     <table>
         <tr>
             <th>
@@ -26,9 +16,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AvailableSeats)
-            </th>
-            <th>
-                Edit/Delete
             </th>
         </tr>
 
@@ -42,15 +29,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.AvailableSeats)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "EditDepartment", new { id = item.ID })
-                    @Html.ActionLink("Delete", "DeleteDepartment", new { id = item.ID })
-                </td>
             </tr>
         }
     </table>
-    <p>
-        @Html.ActionLink("Save", "DisplayCollege", "Colleges")
-    </p>
-
 </center>

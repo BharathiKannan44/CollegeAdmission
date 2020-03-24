@@ -3,17 +3,37 @@ using CollegeAdmission.Entity;
 
 namespace CollegeAdmission.BL
 {
-    public class UserBL
+    public interface IUserBL
     {
-        UserRepository userRepository;
+        bool SignUp(User user);
+        User Login(string emailId, string password);
+    }
+    //
+    //Summary:
+    // Business Class for Users
+    public class UserBL : IUserBL
+    {
+        IUserRepository userRepository;
         public UserBL()
         {
             userRepository = new UserRepository();
         }
-        public void SignUp(User user)
+
+        //
+        //Summary:
+        //  This Method Check the User Already Exists and then Add to the Db.
+        //Return:
+        //  Returns User Entity
+        public bool SignUp(User user)
         {
-            userRepository.SignUp(user);
+            if(userRepository.CheckExistUser(user) == null) 
+            {
+                userRepository.SignUp(user);
+                return true;
+            }
+            return false;            
         }
+
         public User Login(string emailId,string password)
         {
             return userRepository.Login(emailId, password);

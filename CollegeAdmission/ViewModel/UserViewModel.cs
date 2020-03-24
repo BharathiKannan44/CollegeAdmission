@@ -7,57 +7,61 @@ namespace CollegeAdmission.ViewModel
 {
     public enum Role
     {
-        user, Admin
+        User, Admin //Role for User
     }
+
+    //
+    //Summary:
+    //  This is the model class for User
     public class UserViewModel
     {
         public int UserId { get; set; }
 
         [DisplayName("First Name")]
-        [Required(ErrorMessage = "please enter Your Name")]
-        [RegularExpression(@"^[A-Za-z]+$", ErrorMessage = "Please enter valid name")]
-        [MaxLength(20)]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "NameRequired")]
+        [RegularExpression(@"^[A-Za-z]+$", ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "InvalidName")]
+        [MaxLength(40)]
         public string FirstName { get; set; }
 
         [DisplayName("Last Name")]
-        [Required(ErrorMessage = "please enter Your LastName")]
-        [RegularExpression(@"^[A-Za-z]+$", ErrorMessage = "Please enter valid name")]
-        [MaxLength(20)]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "NameRequired")]
+        [RegularExpression(@"^[A-Za-z]+$", ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "InvalidName")]
+        [MaxLength(40)]
         public string LastName { get; set; }
 
         [DisplayName("Gender")]
-        [Required(ErrorMessage = "please Select Gender")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "GenderRequired")]
         public string Gender { get; set; }
 
         [DisplayName("Date Of Birth")]
-        [Required(ErrorMessage = "please enter Your DOB")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "DOBRequired")]
         [DataType(DataType.Date)]
         public DateTime Dob { get; set; }
 
         [DisplayName("Email Id")]
-        [Required(ErrorMessage = "please enter Your Email Id")]
-        [EmailAddress(ErrorMessage = "Please enter valid mail")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "EmailRequired")]
+        [EmailAddress(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "InvalidEmail")]
         [DataType(DataType.EmailAddress)]
-        [MaxLength(40)]
+        [MaxLength(50)]
         public string EmailId { get; set; }
 
         [DisplayName("Mobile Number")]
-        [Required(ErrorMessage = "please enter Your Phone Number")]
-        [RegularExpression(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}", ErrorMessage = "Please enter your number")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "PhoneNumberRequired")]
+        [RegularExpression(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}", ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "InvalidPhoneNumber")]
         [DataType(DataType.PhoneNumber)]
         public long PhoneNumber { get; set; }
 
         [DisplayName("Password")]
-        [Required(ErrorMessage = "please enter Password")]
-        [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessage = "Please enter valid password like uppercase,lowecase,symbol and number")]
-        [StringLength(20, MinimumLength = 8, ErrorMessage = "Password should atleast contain 8 characters")]
+        [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "PasswordRequired")]
+        [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "PasswordConstraint")]
+        [StringLength(20, MinimumLength = 8, ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "PasswordLength")]
         public string Password { get; set; }
 
         [DisplayName("Confirm Password")]
-        [Compare("Password",ErrorMessage = "Password does not match")]
+        [Compare("Password", ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "ReEnterPassword")]
         [Required(ErrorMessage = "please enter Password")]
-        [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessage = "Please enter valid password like uppercase,lowecase,symbol and number")]
-        [StringLength(20, MinimumLength = 8, ErrorMessage = "Password should atleast contain 8 characters")]
+        [RegularExpression("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?!.*s).*$", ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "PasswordConstraint")]
+        [StringLength(20, MinimumLength = 8, ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "PasswordLength")]
         public string ConfirmPassword { get; set; }
         public UserViewModel()
         {

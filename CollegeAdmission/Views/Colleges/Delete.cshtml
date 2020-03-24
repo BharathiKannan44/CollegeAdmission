@@ -1,0 +1,30 @@
+﻿@model CollegeAdmission.ViewModel.CollegeViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+    <div class="form">
+        <h3>Are you sure you want to delete this?</h3>
+
+        <h2>Delete College</h2>
+        <hr />
+        <table>
+            <tr>
+                <td style="font :600">
+                    @Html.DisplayNameFor(model => model.CollegeName):
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CollegeName)
+                </td>
+            </tr>
+        </table>
+        @using (Html.BeginForm("Delete", "Colleges", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.CollegeCode)
+            <input class="btn-submit" type="submit" value="Delete" />
+        }
+        @Html.ActionLink("Back to List", "DisplayCollege", "Colleges")
+    </div>
