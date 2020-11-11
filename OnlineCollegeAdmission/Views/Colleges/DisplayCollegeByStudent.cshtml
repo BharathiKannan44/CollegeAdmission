@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CollegeAdmission.ViewModel.CollegeViewModel>
+
+@{
+    ViewBag.Title = "DisplayCollegeByStudent";
+    }
+
+<center>
+    <h2>Colleges</h2>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CollegeWebsite)
+            </th>
+            <th>
+                Department
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollegeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollegeName)
+                </td>
+                <td>
+                    <a href=@item.CollegeWebsite>@Html.DisplayFor(modelItem => item.CollegeWebsite)</a>
+                </td>
+                <td>
+                    @Html.ActionLink("Show Department", "DisplayDepartmentByStudent", "Department", new { code = item.CollegeCode }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</center>

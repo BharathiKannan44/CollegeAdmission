@@ -7,12 +7,12 @@
 {
     TempData.Keep("CollegeCode");
 }
-<center>
 
-    <h2>Display Department</h2>
-    <p>
-        @Html.ActionLink("Add Department", "AddDepartment", new { code = TempData["CollegeCode"] })
-    </p>
+<div class="form-content">
+    <center>
+        <h2>Departments</h2>
+    </center>
+
     @if (TempData["Message"] != null)
     {
         <div style="color : green">
@@ -49,8 +49,9 @@
             </tr>
         }
     </table>
-    <p>
-        @Html.ActionLink("Save", "DisplayCollege", "Colleges")
-    </p>
 
-</center>
+    <input type="button" class="btn-primary" value="Add Department" onclick="location.href='@Url.Action("AddDepartment", "Department", new { code = TempData["CollegeCode"] })'" />
+    <input type="button" class="btn-sucess" value="Save" onclick="location.href='@Url.Action("DisplayCollege", "Colleges")'" />
+
+</div>
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CollegeAdmission.ViewModel.UserApplicationModel>
+
+@{
+    ViewBag.Title = "ShowApplicationByUser";
+}
+<div class="form-content">
+    <h4 style="align-content:center;">Applications</h4>
+
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.college.CollegeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department.DeptName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenthMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwelthMark)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.college.CollegeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.department.DeptName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.user.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.TenthMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.TwelthMark)
+                </td>
+                <td style="color:green;">
+                    @Html.DisplayFor(model => item.Status)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

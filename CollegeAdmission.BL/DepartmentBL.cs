@@ -13,6 +13,8 @@ namespace CollegeAdmission.BL
         IEnumerable<Department> GetDepartmentList();
         void EditDepartment(CollegeDepartment collegeDepartment);
         void DeleteDepartment(int id);
+        CollegeDepartment CheckExistsDepartment(int deptId, string collegeCode);
+        Department GetDepartmentById(int id);
     }
     //
     //Summary:
@@ -58,6 +60,14 @@ namespace CollegeAdmission.BL
         public void DeleteDepartment(int id)
         {
             departmentRepository.DeleteDepartment(id);
+        }
+        public Department GetDepartmentById(int id)
+        {
+            return departmentRepository.GetDepartmentById(id);
+        }
+        public CollegeDepartment CheckExistsDepartment(int deptId, string collegeCode)
+        {
+            return departmentRepository.CheckExistsDepartment(deptId, collegeCode);
         }
     }
 }

@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=6.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -55,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationRepository.cs" />
     <Compile Include="CollegeDBContext.cs" />
     <Compile Include="CollegeRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />
@@ -73,6 +76,26 @@
     <Compile Include="Migrations\202003210710109_v-3.cs" />
     <Compile Include="Migrations\202003210710109_v-3.designer.cs">
       <DependentUpon>202003210710109_v-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011060842232_v11.cs" />
+    <Compile Include="Migrations\202011060842232_v11.designer.cs">
+      <DependentUpon>202011060842232_v11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011060846311_v21.cs" />
+    <Compile Include="Migrations\202011060846311_v21.designer.cs">
+      <DependentUpon>202011060846311_v21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011061027538_v31.cs" />
+    <Compile Include="Migrations\202011061027538_v31.designer.cs">
+      <DependentUpon>202011061027538_v31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011070459598_v4.cs" />
+    <Compile Include="Migrations\202011070459598_v4.designer.cs">
+      <DependentUpon>202011070459598_v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011081428387_v5.cs" />
+    <Compile Include="Migrations\202011081428387_v5.designer.cs">
+      <DependentUpon>202011081428387_v5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +123,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003210710109_v-3.resx">
       <DependentUpon>202003210710109_v-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011060842232_v11.resx">
+      <DependentUpon>202011060842232_v11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011060846311_v21.resx">
+      <DependentUpon>202011060846311_v21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011061027538_v31.resx">
+      <DependentUpon>202011061027538_v31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011070459598_v4.resx">
+      <DependentUpon>202011070459598_v4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011081428387_v5.resx">
+      <DependentUpon>202011081428387_v5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

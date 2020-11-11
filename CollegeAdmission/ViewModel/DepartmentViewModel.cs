@@ -21,7 +21,7 @@ namespace CollegeAdmission.ViewModel
 
         [DisplayName("Available seats")]
         [Required(ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "SeatsRequired")]
-        [Range(10,500, ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "SeatsRange")]
+        [Range(0,500, ErrorMessageResourceType = typeof(Message), ErrorMessageResourceName = "SeatsRange")]
         public int AvailableSeats { get; set; }
 
         public DepartmentViewModel()

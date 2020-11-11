@@ -11,6 +11,7 @@ namespace CollegeAdmission.DAL
         void SignUp(User user);
         User Login(string emailId, string password);
         User CheckExistUser(User user);
+        User GetUser(string emailId);
     }
 
     //
@@ -51,6 +52,13 @@ namespace CollegeAdmission.DAL
             using(CollegeDBContext collegeDBContext = new CollegeDBContext())
             {
                 return collegeDBContext.User.Where(m => m.EmailId == user.EmailId).FirstOrDefault();
+            }
+        }
+        public User GetUser(string emailId)
+        {
+            using (CollegeDBContext collegeDBContext = new CollegeDBContext())
+            {
+                return collegeDBContext.User.Where(m => m.EmailId == emailId).FirstOrDefault();
             }
         }
     }

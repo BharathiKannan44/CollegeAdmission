@@ -3,9 +3,6 @@
 @{
     ViewBag.Title = "AddDepartment";
 }
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <div class="form">
     @using (Html.BeginForm("AddDepartment", "Department", FormMethod.Post))
     {
@@ -24,9 +21,9 @@
         @Html.DropDownListFor(model => model.DeptId, (List<SelectListItem>)ViewBag.Dept, "--Select Dept--", new { @class = "textBox" })<br /><br />
         @Html.LabelFor(model => model.AvailableSeats)
         @Html.ValidationMessageFor(model => model.AvailableSeats)<br />
-        @Html.TextBoxFor(model => model.AvailableSeats, "", new { @class = "textBox", @placeholder = "Enter Available seats", @maxlength = "4" })<br /><br />
+        @Html.TextBoxFor(model => model.AvailableSeats, "", new { @class = "textBox", @placeholder = "Enter Available seats", @maxlength = "4", autocomplete = "off" })<br /><br />
 
         <input class="btn-submit" style="margin-left: 5%" type="submit" value="Save Department" />
-        @Html.ActionLink("Back to List", "DisplayCollege","Colleges")
+        @Html.ActionLink("Back to College list", "DisplayDepartmentByCollege")
     }
 </div>

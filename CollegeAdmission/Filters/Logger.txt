@@ -40,3 +40,139 @@ Colleges ---> Create ---> Unexpected "if" keyword after "@" character.  Once ins
 Colleges ---> Create ---> Unexpected "if" keyword after "@" character.  Once inside code, you do not need to prefix constructs like "if" with "@".
  ---> 21/03/2020 12:18:21
 User ---> Registration ---> Validation failed for one or more entities. See 'EntityValidationErrors' property for more details. ---> 21/03/2020 12:34:09
+Department ---> EditDepartment ---> The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditDepartment(Int32)' in 'CollegeAdmission.Controllers.DepartmentController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 05/11/2020 17:07:55
+Department ---> AddDepartment ---> Object reference not set to an instance of an object. ---> 06/11/2020 12:19:24
+Department ---> AddDepartment ---> Object reference not set to an instance of an object. ---> 06/11/2020 12:20:30
+UserApplications ---> Create ---> The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_MasterPage.cshtml": "Scripts". ---> 06/11/2020 15:58:55
+UserApplications ---> Create ---> The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_MasterPage.cshtml": "Scripts". ---> 06/11/2020 16:00:41
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'userID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 16:02:12
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'userID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 16:03:00
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'userID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 16:03:05
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'userID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 16:03:09
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'userID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 16:03:20
+Department ---> AddDepartment ---> The parameterized query '(@DeptId int,@CollegeCode nvarchar(4000),@AvailableSeats int)Col' expects the parameter '@CollegeCode', which was not supplied. ---> 06/11/2020 17:05:23
+UserApplications ---> Create ---> The required anti-forgery form field "__RequestVerificationToken" is not present. ---> 06/11/2020 18:36:57
+UserApplications ---> Create ---> The required anti-forgery form field "__RequestVerificationToken" is not present. ---> 06/11/2020 18:37:26
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 18:48:35
+UserApplications ---> Create ---> The required anti-forgery form field "__RequestVerificationToken" is not present. ---> 06/11/2020 18:52:26
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 18:55:27
+UserApplications ---> Create ---> Validation failed for one or more entities. See 'EntityValidationErrors' property for more details. ---> 06/11/2020 18:59:20
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 19:01:59
+UserApplications ---> Create ---> Validation failed for one or more entities. See 'EntityValidationErrors' property for more details. ---> 06/11/2020 19:03:13
+UserApplications ---> Create ---> Validation failed for one or more entities. See 'EntityValidationErrors' property for more details. ---> 06/11/2020 19:06:49
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 06/11/2020 19:12:31
+UserApplications ---> Index ---> The view 'Added Suceesfully' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/UserApplications/Added Suceesfully.aspx
+~/Views/UserApplications/Added Suceesfully.ascx
+~/Views/Shared/Added Suceesfully.aspx
+~/Views/Shared/Added Suceesfully.ascx
+~/Views/UserApplications/Added Suceesfully.cshtml
+~/Views/UserApplications/Added Suceesfully.vbhtml
+~/Views/Shared/Added Suceesfully.cshtml
+~/Views/Shared/Added Suceesfully.vbhtml ---> 06/11/2020 19:13:05
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 07/11/2020 08:42:59
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 07/11/2020 08:46:24
+UserApplications ---> Index ---> The view 'Added Suceesfully' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/UserApplications/Added Suceesfully.aspx
+~/Views/UserApplications/Added Suceesfully.ascx
+~/Views/Shared/Added Suceesfully.aspx
+~/Views/Shared/Added Suceesfully.ascx
+~/Views/UserApplications/Added Suceesfully.cshtml
+~/Views/UserApplications/Added Suceesfully.vbhtml
+~/Views/Shared/Added Suceesfully.cshtml
+~/Views/Shared/Added Suceesfully.vbhtml ---> 07/11/2020 08:47:26
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 07/11/2020 08:50:02
+UserApplications ---> Create ---> Object reference not set to an instance of an object. ---> 07/11/2020 08:51:35
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 07/11/2020 09:06:34
+UserApplications ---> Create ---> Object reference not set to an instance of an object. ---> 07/11/2020 09:16:16
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 07/11/2020 09:17:59
+UserApplications ---> Search ---> The view 'Search' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/UserApplications/Search.aspx
+~/Views/UserApplications/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Views/UserApplications/Search.cshtml
+~/Views/UserApplications/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml ---> 07/11/2020 11:42:44
+UserApplications ---> Search ---> The view 'Search' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/UserApplications/Search.aspx
+~/Views/UserApplications/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Views/UserApplications/Search.cshtml
+~/Views/UserApplications/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml ---> 07/11/2020 12:13:07
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 20:17:58
+UserApplications ---> ShowApplicationByAdmin ---> The model item passed into the dictionary is of type 'CollegeAdmission.ViewModel.UserApplicationModel', but this dictionary requires a model item of type 'CollegeAdmission.Entity.UserApplication'. ---> 08/11/2020 20:18:50
+UserApplications ---> ShowApplicationByAdmin ---> The model item passed into the dictionary is of type 'CollegeAdmission.ViewModel.UserApplicationModel', but this dictionary requires a model item of type 'CollegeAdmission.Entity.UserApplication'. ---> 08/11/2020 20:19:04
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 20:20:51
+UserApplications ---> ShowApplicationByAdmin ---> The model item passed into the dictionary is of type 'CollegeAdmission.ViewModel.UserApplicationModel', but this dictionary requires a model item of type 'CollegeAdmission.Entity.UserApplication'. ---> 08/11/2020 20:22:11
+UserApplications ---> ShowApplicationByAdmin ---> The model item passed into the dictionary is of type 'CollegeAdmission.ViewModel.UserApplicationModel', but this dictionary requires a model item of type 'CollegeAdmission.Entity.UserApplication'. ---> 08/11/2020 20:24:11
+UserApplications ---> ShowApplicationByAdmin ---> The model item passed into the dictionary is of type 'CollegeAdmission.ViewModel.UserApplicationModel', but this dictionary requires a model item of type 'CollegeAdmission.Entity.UserApplication'. ---> 08/11/2020 20:24:57
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 20:25:51
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 20:28:09
+UserApplications ---> ShowApplicationByUser ---> Non-static method requires a target. ---> 08/11/2020 21:33:19
+UserApplications ---> ShowApplicationByUser ---> The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[CollegeAdmission.ViewModel.UserApplicationModel]', but this dictionary requires a model item of type 'CollegeAdmission.Entity.UserApplication'. ---> 08/11/2020 21:35:50
+UserApplications ---> ShowApplicationByUser ---> Non-static method requires a target. ---> 08/11/2020 21:37:53
+UserApplications ---> ShowApplicationByUser ---> The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[CollegeAdmission.ViewModel.UserApplicationModel]', but this dictionary requires a model item of type 'CollegeAdmission.ViewModel.UserApplicationModel'. ---> 08/11/2020 21:38:00
+UserApplications ---> ShowApplicationByUser ---> The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[CollegeAdmission.ViewModel.UserApplicationModel]', but this dictionary requires a model item of type 'CollegeAdmission.ViewModel.UserApplicationModel'. ---> 08/11/2020 21:38:35
+UserApplications ---> ShowApplicationByUser ---> The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[CollegeAdmission.ViewModel.UserApplicationModel]', but this dictionary requires a model item of type 'CollegeAdmission.ViewModel.UserApplicationModel'. ---> 08/11/2020 21:39:38
+UserApplications ---> ShowApplicationByUser ---> Non-static method requires a target. ---> 08/11/2020 21:41:29
+UserApplications ---> ShowApplicationByUser ---> C:\Users\kannan\Source\Repos\CollegeAdmission\CollegeAdmission\Views\UserApplications\ShowApplicationByUser.cshtml(39): error CS1061: 'IEnumerable<UserApplicationModel>' does not contain a definition for 'college' and no accessible extension method 'college' accepting a first argument of type 'IEnumerable<UserApplicationModel>' could be found (are you missing a using directive or an assembly reference?) ---> 08/11/2020 21:41:31
+UserApplications ---> ShowApplicationByUser ---> C:\Users\kannan\Source\Repos\CollegeAdmission\CollegeAdmission\Views\UserApplications\ShowApplicationByUser.cshtml(39): error CS1061: 'IEnumerable<UserApplicationModel>' does not contain a definition for 'college' and no accessible extension method 'college' accepting a first argument of type 'IEnumerable<UserApplicationModel>' could be found (are you missing a using directive or an assembly reference?) ---> 08/11/2020 21:41:32
+UserApplications ---> ShowApplicationByUser ---> C:\Users\kannan\Source\Repos\CollegeAdmission\CollegeAdmission\Views\UserApplications\ShowApplicationByUser.cshtml(39): error CS1061: 'IEnumerable<UserApplicationModel>' does not contain a definition for 'college' and no accessible extension method 'college' accepting a first argument of type 'IEnumerable<UserApplicationModel>' could be found (are you missing a using directive or an assembly reference?) ---> 08/11/2020 21:41:33
+UserApplications ---> ShowApplicationByUser ---> C:\Users\kannan\Source\Repos\CollegeAdmission\CollegeAdmission\Views\UserApplications\ShowApplicationByUser.cshtml(39): error CS1061: 'IEnumerable<UserApplicationModel>' does not contain a definition for 'college' and no accessible extension method 'college' accepting a first argument of type 'IEnumerable<UserApplicationModel>' could be found (are you missing a using directive or an assembly reference?) ---> 08/11/2020 21:41:34
+UserApplications ---> ShowApplicationByUser ---> C:\Users\kannan\Source\Repos\CollegeAdmission\CollegeAdmission\Views\UserApplications\ShowApplicationByUser.cshtml(39): error CS1061: 'IEnumerable<UserApplicationModel>' does not contain a definition for 'college' and no accessible extension method 'college' accepting a first argument of type 'IEnumerable<UserApplicationModel>' could be found (are you missing a using directive or an assembly reference?) ---> 08/11/2020 21:41:34
+UserApplications ---> ShowApplicationByUser ---> Non-static method requires a target. ---> 08/11/2020 21:50:09
+UserApplications ---> Create ---> The parameters dictionary contains a null entry for parameter 'deptId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Create(System.String, Int32, System.String)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 21:57:16
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 22:01:37
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 22:02:47
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 08/11/2020 22:09:31
+UserApplications ---> ShowApplicationByAdmin ---> The parameters dictionary contains a null entry for parameter 'applicationNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ShowApplicationByAdmin(Int32)' in 'CollegeAdmission.Controllers.UserApplicationsController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters ---> 09/11/2020 08:33:10
+UserApplications ---> DisplayApplications ---> Cannot convert type 'System.Web.Mvc.SelectList' to 'System.Collections.Generic.List<System.Web.Mvc.SelectListItem>' ---> 09/11/2020 09:32:43
+UserApplications ---> DisplayApplications ---> Input string was not in a correct format. ---> 09/11/2020 10:08:56
+UserApplications ---> DisplayApplications ---> Input string was not in a correct format. ---> 09/11/2020 10:09:48
+UserApplications ---> DisplayApplications ---> Input string was not in a correct format. ---> 09/11/2020 10:20:17
+UserApplications ---> DisplayApplications ---> Input string was not in a correct format. ---> 09/11/2020 10:22:16
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:10:27
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:10:40
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:10:48
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:11:00
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:11:41
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:12:10
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:12:34
+User ---> Login ---> An opening "(" is missing the corresponding closing ")".
+ ---> 10/11/2020 17:12:48

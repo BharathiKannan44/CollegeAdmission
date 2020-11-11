@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="header">
+        <h1> College Admission </h1>
+    </div>
+    <div class="topNav">
+
+        @Html.ActionLink("Home", "Index", "Home")
+        @if (HttpContext.Current.User.IsInRole("User"))
+        {
+            @Html.ActionLink("Colleges", "DisplayCollegeByStudent", "Colleges")
+        }
+
+        @if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Colleges", "DisplayCollege", "Colleges")
+            @Html.ActionLink("Add College", "Create", "Colleges")
+        }
+        @Html.ActionLink("About Us", "Index", "Home")
+
+        <div class="topNav-Right">
+
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Log out", "LogOff", "User")
+                if (HttpContext.Current.User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink(HttpContext.Current.User.Identity.Name, "Index", "Admin")
+                }
+                else
+                {
+                    @Html.ActionLink(HttpContext.Current.User.Identity.Name, "Index", "Student")
+                }
+            }
+            else
+            {
+                @Html.ActionLink("Login", "Login", "User")
+                @Html.ActionLink("Sign up", "Registration", "User")
+            }
+        </div>
+
+    </div>
+    @RenderBody();
+</body>
+</html>

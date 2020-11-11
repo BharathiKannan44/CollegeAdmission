@@ -214,6 +214,15 @@ namespace CollegeAdmission {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter your Mark.
+        /// </summary>
+        public static string MarkRange {
+            get {
+                return ResourceManager.GetString("MarkRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter your Name.
         /// </summary>
         public static string NameRequired {
@@ -300,6 +309,24 @@ namespace CollegeAdmission {
         public static string SelectDepartment {
             get {
                 return ResourceManager.GetString("SelectDepartment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter 10th Mark.
+        /// </summary>
+        public static string TenthMarkRequired {
+            get {
+                return ResourceManager.GetString("TenthMarkRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter 12th Mark.
+        /// </summary>
+        public static string TwelthMarkRequired {
+            get {
+                return ResourceManager.GetString("TwelthMarkRequired", resourceCulture);
             }
         }
         

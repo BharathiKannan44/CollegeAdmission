@@ -1,0 +1,45 @@
+﻿@model CollegeAdmission.ViewModel.UserApplicationModel
+
+@{
+    ViewBag.Title = "ShowApplicationByAdmin";
+}
+
+<div class="form">
+    <h2 style="align-content: center;">Application Number: @Html.DisplayFor(model => model.ApplicationNumber)</h2>
+    <hr />
+    <table>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.college.CollegeName)</b></td>
+            <td>@Html.DisplayFor(model => model.college.CollegeName)</td>
+        </tr>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.department.DeptName)</b></td>
+            <td>@Html.DisplayFor(model => model.department.DeptName)</td>
+        </tr>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.user.FirstName)</b></td>
+            <td>@Html.DisplayFor(model => model.user.FirstName)</td>
+        </tr>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.user.LastName)</b></td>
+            <td>@Html.DisplayFor(model => model.user.LastName)</td>
+        </tr>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.City)</b></td>
+            <td>@Html.DisplayFor(model => model.City)</td>
+        </tr>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.TenthMark)</b></td>
+            <td>@Html.DisplayFor(model => model.TenthMark)</td>
+        </tr>
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.TwelthMark)</b></td>
+            <td>@Html.DisplayFor(model => model.TwelthMark)</td>
+        </tr>
+    </table>
+    <br />
+    <div style=" align-content: center">
+        <input type="button" class="btn-sucess" value="Accept" onclick="location.href='@Url.Action("UpdateApplication", "UserApplications", new {applicationNumber = Model.ApplicationNumber, status = 1})'" />
+        <input type="button" class="btn-primary" value="Reject" onclick="location.href='@Url.Action("UpdateApplication", "UserApplications", new {applicationNumber = Model.ApplicationNumber, status = 2})'" />
+    </div>
+</div>

@@ -49,10 +49,10 @@ namespace CollegeAdmission.Controllers
         //Summary:
         //  The Action is used call the view and pass Department view model with college code 
         [Authorize(Roles = "Admin")]
-        public ActionResult AddDepartment()
+        public ActionResult AddDepartment(string code)
         {
             DepartmentViewModel departmentViewModel = new DepartmentViewModel();
-            departmentViewModel.CollegeCode = TempData["CollegeCode"].ToString();
+            departmentViewModel.CollegeCode = code;
             IEnumerable<Department> departments = departmentBL.GetDepartmentList();
             List<SelectListItem> deptList = new List<SelectListItem>();
             foreach (Department department in departments)
@@ -165,13 +165,16 @@ namespace CollegeAdmission.Controllers
         public ActionResult DisplayDepartmentByStudent(string code)
         {
             IEnumerable<CollegeDepartment> departmentList = departmentBL.GetDepartmentByCollege(code);
+            TempData["CollegeCode"] = code;
             List<DepartmentViewModel> departmentViewModelList = new List<DepartmentViewModel>();
             foreach (CollegeDepartment department in departmentList)
             {
                 DepartmentViewModel departmentViewModel = AutoMapper.Mapper.Map<CollegeDepartment, DepartmentViewModel>(department);
                 departmentViewModelList.Add(departmentViewModel);
             }
-            return View(departmentViewModelList);
+            if (TempData["Message"] != null)
+                ViewBag.Message = TempData["Message"].ToString();
+            return View(departmentViewModelList);            
         }
     }
 }

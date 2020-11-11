@@ -13,6 +13,7 @@ namespace CollegeAdmission.App_Start
                 config.CreateMap<DepartmentViewModel, CollegeDepartment>();
                 config.CreateMap<UserViewModel, User>();
                 config.CreateMap<CollegeViewModel, College>();
+                config.CreateMap<UserApplicationModel, UserApplication>();
             });
         }
     }

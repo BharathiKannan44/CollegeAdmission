@@ -18,10 +18,10 @@
     }
     @Html.LabelFor(model => model.FirstName)
     @Html.ValidationMessageFor(model => Model.FirstName)<br />
-    @Html.TextBoxFor(model => model.FirstName, "", new { @class = "textBox", @placeholder = "Enter your first name", @maxlength = "40" })<br /> <br />
+    @Html.TextBoxFor(model => model.FirstName, "", new { @class = "textBox", @placeholder = "Enter your first name", @maxlength = "40", @autocomplete = "off" })<br /> <br />
     @Html.LabelFor(model => model.LastName)
     @Html.ValidationMessageFor(model => Model.LastName)<br />
-    @Html.TextBoxFor(model => model.LastName, "", new { @class = "textBox", @placeholder = "Enter your last name", @maxlength = "40" })<br /><br />
+    @Html.TextBoxFor(model => model.LastName, "", new { @class = "textBox", @placeholder = "Enter your last name", @maxlength = "40", @autocomplete = "off" })<br /><br />
     @Html.LabelFor(model => model.Dob)
     @Html.ValidationMessageFor(model => Model.Dob)<br />
     @Html.TextBoxFor(model => model.Dob, "", new { @class = "textBox", @placeholder = "Enter your date of birth", @type = "date" })<br /><br />
@@ -32,13 +32,13 @@
     @Html.RadioButtonFor(model => model.Gender, "Others") Others<br /><br />
     @Html.LabelFor(model => model.EmailId)
     @Html.ValidationMessageFor(model => Model.EmailId)<br />
-    @Html.TextBoxFor(model => model.EmailId, "", new { @class = "textBox", @placeholder = "Enter your Email Id", @maxlength = "50" })<br /><br />
+    @Html.TextBoxFor(model => model.EmailId, "", new { @class = "textBox", @placeholder = "Enter your Email Id", @maxlength = "50", @autocomplete = "off" })<br /><br />
     @Html.LabelFor(model => model.PhoneNumber)
     @Html.ValidationMessageFor(model => Model.PhoneNumber)<br />
-    @Html.TextBoxFor(model => model.PhoneNumber, "", new { @class = "textBox", @placeholder = "Enter your phone number", @maxlength = "10" })<br /><br />
+    @Html.TextBoxFor(model => model.PhoneNumber, "", new { @class = "textBox", @placeholder = "Enter your phone number", @maxlength = "10", @autocomplete = "off" })<br /><br />
     @Html.LabelFor(model => model.Password)
     @Html.ValidationMessageFor(model => model.Password)<br />
-    @Html.PasswordFor(model => model.Password, new { @class = "textBox", @placeholder = "Enter password", @maxlength = "20" })<br /><br />
+    @Html.PasswordFor(model => model.Password, new { @class = "textBox", @placeholder = "password should contains Uppercase,Lowercase,symbols and number", @maxlength = "20" })<br /><br />
     @Html.LabelFor(Model => Model.ConfirmPassword)
     @Html.ValidationMessageFor(model => model.ConfirmPassword)<br />
     @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "textBox", @placeholder = "Re-Enter password", @maxlength = "20" }) <br /><br />

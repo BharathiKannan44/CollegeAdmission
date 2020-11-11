@@ -3,19 +3,17 @@
 @{
     ViewBag.Title = "DisplayCollege";
 }
-
-<center>
-    <h2>Colleges</h2>
-    <p>
-        @Html.ActionLink("Add New College", "Create")
-    </p>
-    @if (TempData["Message"] != null)
-    {
-        <div style="color : green">
-            @TempData["Message"].ToString()
-        </div>
-    }
+<div class="form-content">
+    <center>
+        <h2>Colleges</h2>
+    </center>
     <table>
+        @if (TempData["Message"] != null)
+        {
+            <div style="color : green">
+                @TempData["Message"].ToString()
+            </div>
+        }
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.CollegeCode)
@@ -41,14 +39,15 @@
                     @Html.DisplayFor(modelItem => item.CollegeName)
                 </td>
                 <td>
-                    <a href= @item.CollegeWebsite >@Html.DisplayFor(modelItem => item.CollegeWebsite)</a>
+                    <a href=@item.CollegeWebsite>@Html.DisplayFor(modelItem => item.CollegeWebsite)</a>
                 </td>
                 <td>
-
                     @Html.ActionLink("Edit", "Edit", new { code = item.CollegeCode })
                     @Html.ActionLink("Delete", "Delete", new { code = item.CollegeCode })
                 </td>
             </tr>
         }
     </table>
-</center>
+
+</div>
+

@@ -1,0 +1,34 @@
+﻿@model CollegeAdmission.ViewModel.UserApplicationModel
+
+@{
+    ViewBag.Title = "Create";
+}
+@if (TempData["College"] != null)
+{
+    TempData.Keep("College");
+}
+@if (TempData["Department"] != null)
+{
+    TempData.Keep("Department");
+}
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "UserApplications", FormMethod.Post))
+{
+    <div class="form">
+        <h2 class="form-header">Application Form</h2>
+        <h3 style="color:mediumorchid">@TempData["CollegeName"].ToString()</h3>
+        <h1 style=" align-content : center">@TempData["DeptName"].ToString()</h1><br />
+        @Html.LabelFor(model => model.TenthMark)
+        @Html.ValidationMessageFor(model => Model.TenthMark)<br />
+        @Html.TextBoxFor(model => model.TenthMark, "", new { @class = "textBox", @placeholder = "Enter your SSLC mark", @maxlength = "3", @autocomplete = "off" })<br /> <br />
+        @Html.LabelFor(model => model.TwelthMark)
+        @Html.ValidationMessageFor(model => Model.TwelthMark)<br />
+        @Html.TextBoxFor(model => model.TwelthMark, "", new { @class = "textBox", @placeholder = "Enter your HSC mark", @maxlength = "3", @autocomplete = "off" })<br /> <br />
+        @Html.LabelFor(model => model.City)
+        @Html.ValidationMessageFor(model => Model.City)<br />
+        @Html.TextBoxFor(model => model.City, "", new { @class = "textBox", @placeholder = "Enter your City", @maxlength = "25", @autocomplete = "off" })<br /> <br />
+        <input class="btn-submit" style="margin-left: 5%" type="submit" value="Submit & Pay" />
+        @Html.ActionLink("Back", "DisplayDepartmentByStudent","Department")
+    </div>
+
+}

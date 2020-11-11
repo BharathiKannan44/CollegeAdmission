@@ -13,7 +13,7 @@ namespace CollegeAdmission.DAL
         public DbSet<College> Colleges { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<CollegeDepartment> CollegeDepartments { get; set; }
-
+        public DbSet<UserApplication> UserApplications { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<College>().MapToStoredProcedures();

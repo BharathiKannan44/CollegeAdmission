@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CollegeAdmission.ViewModel.UserApplicationModel>
+
+@{
+    ViewBag.Title = "DisplayApplications";
+}
+
+
+<div class="form-content">
+    <center>
+        <h2>Applications</h2>
+    </center>
+    @using (Html.BeginForm("Search", "UserApplications", FormMethod.Post))
+    {
+        <div style="margin-left: 25%">
+            @Html.DropDownList("College", (List<SelectListItem>)ViewBag.College, "All Colleges", new { @class = "search-Box" })
+            @Html.DropDownList("status", ViewBag.StatusList as SelectList, "--Select Status--", new { @class = "search-Box" })
+            <input class="search" style="margin-left: 5%" type="submit" value="search" /><br /><br />
+        </div>
+    }
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.user.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.college.CollegeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department.DeptName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.user.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.user.EmailId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.college.CollegeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.department.DeptName)
+                </td>
+
+                @if (item.Status == "Accepted")
+                {
+                    <td style="color:green">
+                        @Html.DisplayFor(model => item.Status)
+                    </td>
+                }
+                else if (item.Status == "Rejected")
+                {
+                    <td style="color:red">
+                        @Html.DisplayFor(model => item.Status)
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.DisplayFor(model => item.Status)
+                    </td>
+                }
+                <td>
+                    @Html.ActionLink("show Application", "ShowApplicationByAdmin", new { applicationNumber = item.ApplicationNumber })
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+

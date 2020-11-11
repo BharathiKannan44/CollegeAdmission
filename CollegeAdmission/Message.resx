@@ -168,6 +168,9 @@
   <data name="InvalidWebsite" xml:space="preserve">
     <value>please enter valid website</value>
   </data>
+  <data name="MarkRange" xml:space="preserve">
+    <value>Please enter your Mark</value>
+  </data>
   <data name="NameRequired" xml:space="preserve">
     <value>Please enter your Name</value>
   </data>
@@ -197,6 +200,12 @@
   </data>
   <data name="SelectDepartment" xml:space="preserve">
     <value>Please select Department</value>
+  </data>
+  <data name="TenthMarkRequired" xml:space="preserve">
+    <value>Please enter 10th Mark</value>
+  </data>
+  <data name="TwelthMarkRequired" xml:space="preserve">
+    <value>Please enter 12th Mark</value>
   </data>
   <data name="WebsiteRequired" xml:space="preserve">
     <value>College Website is required</value>

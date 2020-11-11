@@ -7,6 +7,7 @@ namespace CollegeAdmission.BL
     {
         bool SignUp(User user);
         User Login(string emailId, string password);
+        User GetUser(string emailId);
     }
     //
     //Summary:
@@ -39,5 +40,9 @@ namespace CollegeAdmission.BL
             return userRepository.Login(emailId, password);
         }
 
+        public User GetUser(string emailId)
+        {
+            return userRepository.GetUser(emailId);
+        }
     }
 }

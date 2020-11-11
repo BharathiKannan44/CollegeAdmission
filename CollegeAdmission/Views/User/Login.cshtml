@@ -16,7 +16,7 @@
     {
         @Html.LabelFor(model => model.EmailId)
         @Html.ValidationMessageFor(model => Model.EmailId)<br />
-        @Html.TextBoxFor(model => model.EmailId, "", new { @class = "textBox", @placeholder = "Enter your Email Id" })<br /><br />
+        @Html.TextBoxFor(model => model.EmailId, "", new { @class = "textBox", @placeholder = "Enter your Email Id", @autocomplete = "off" })<br /><br />
         @Html.LabelFor(model => model.Password)
         @Html.ValidationMessageFor(model => model.Password)<br />
         @Html.PasswordFor(model => model.Password, new { @class = "textBox", @placeholder = "Enter password" })<br /><br />

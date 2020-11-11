@@ -1,5 +1,6 @@
 ﻿using CollegeAdmission.Entity;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -18,6 +19,7 @@ namespace CollegeAdmission.DAL
         void EditDepartment(CollegeDepartment collegeDepartment);
         void DeleteDepartment(int id);
         CollegeDepartment CheckExistsDepartment(int deptId, string collegeCode);
+        Department GetDepartmentById(int id);
     }
 
     //
@@ -65,12 +67,12 @@ namespace CollegeAdmission.DAL
         {
             using (CollegeDBContext collegeDBContext = new CollegeDBContext())
             {
-                SqlParameter DeptId = new SqlParameter("@DeptId", collegeDepartment.DeptId);
-                SqlParameter collegeCode = new SqlParameter("@CollegeCode", collegeDepartment.CollegeCode);
-                SqlParameter AvailableSeats = new SqlParameter("@AvailableSeats", collegeDepartment.AvailableSeats);
-                collegeDBContext.Database.ExecuteSqlCommand("CollegeDepartment_Insert @DeptId, @CollegeCode, @AvailableSeats", DeptId, collegeCode, AvailableSeats);
-                //collegeDBContext.CollegeDepartments.Add(collegeDepartment);
-                //collegeDBContext.SaveChanges();
+                //SqlParameter DeptId = new SqlParameter("@DeptId", collegeDepartment.DeptId);
+                //SqlParameter collegeCode = new SqlParameter("@CollegeCode", collegeDepartment.CollegeCode);
+                //SqlParameter AvailableSeats = new SqlParameter("@AvailableSeats", collegeDepartment.AvailableSeats);
+                //collegeDBContext.Database.ExecuteSqlCommand("@DeptId, @CollegeCode, @AvailableSeats", DeptId, collegeCode, AvailableSeats);
+                collegeDBContext.CollegeDepartments.Add(collegeDepartment);
+                collegeDBContext.SaveChanges();
             }
         }
 
@@ -94,13 +96,13 @@ namespace CollegeAdmission.DAL
         {
             using (CollegeDBContext collegeDBContext = new CollegeDBContext())
             {
-                SqlParameter Id = new SqlParameter("@ID", collegeDepartment.ID);
-                SqlParameter DeptId = new SqlParameter("@DeptId", collegeDepartment.DeptId);
-                SqlParameter collegeCode = new SqlParameter("@CollegeCode", collegeDepartment.CollegeCode);
-                SqlParameter AvailableSeats = new SqlParameter("@AvailableSeats", collegeDepartment.AvailableSeats);
-                collegeDBContext.Database.ExecuteSqlCommand("CollegeDepartment_Update @ID, @DeptId, @CollegeCode, @AvailableSeats", Id, DeptId, collegeCode, AvailableSeats);
-                //collegeDBContext.Entry(collegeDepartment).State = EntityState.Modified;
-                //collegeDBContext.SaveChanges();
+                //SqlParameter Id = new SqlParameter("@ID", collegeDepartment.ID);
+                //SqlParameter DeptId = new SqlParameter("@DeptId", collegeDepartment.DeptId);
+                //SqlParameter collegeCode = new SqlParameter("@CollegeCode", collegeDepartment.CollegeCode);
+                //SqlParameter AvailableSeats = new SqlParameter("@AvailableSeats", collegeDepartment.AvailableSeats);
+                //collegeDBContext.Database.ExecuteSqlCommand("CollegeDepartment_Update @ID, @DeptId, @CollegeCode, @AvailableSeats", Id, DeptId, collegeCode, AvailableSeats);
+                collegeDBContext.Entry(collegeDepartment).State = EntityState.Modified;
+                collegeDBContext.SaveChanges();
             }
         }
 
@@ -111,7 +113,7 @@ namespace CollegeAdmission.DAL
         {
             using (CollegeDBContext collegeDBContext = new CollegeDBContext())
             {
-                SqlParameter Id = new SqlParameter("@ID",id);
+                SqlParameter Id = new SqlParameter("@ID", id);
                 collegeDBContext.Database.ExecuteSqlCommand("CollegeDepartment_Delete @ID", Id);
                 //collegeDBContext.CollegeDepartments.Remove(department);
                 //collegeDBContext.SaveChanges();
@@ -125,9 +127,16 @@ namespace CollegeAdmission.DAL
         //  Returns CollegeDepartment
         public CollegeDepartment CheckExistsDepartment(int deptId, string collegeCode)
         {
-            using(CollegeDBContext collegeDBContext = new CollegeDBContext())
+            using (CollegeDBContext collegeDBContext = new CollegeDBContext())
             {
                 return collegeDBContext.CollegeDepartments.Where(m => m.DeptId == deptId && m.CollegeCode == collegeCode).FirstOrDefault();
+            }
+        }
+        public Department GetDepartmentById(int id)
+        {
+            using (CollegeDBContext collegeDBContext = new CollegeDBContext())
+            {
+                return collegeDBContext.Departments.Where(m => m.DeptId == id).FirstOrDefault();
             }
         }
     }

@@ -20,13 +20,13 @@
         }
         @Html.LabelFor(model => model.CollegeCode)
         @Html.ValidationMessageFor(model => model.CollegeCode)<br />
-        @Html.TextBoxFor(model => model.CollegeCode, "", new { @class = "textBox", @placeholder = "Enter College Code", @maxlength = "8" })<br /><br />
+        @Html.TextBoxFor(model => model.CollegeCode, "", new { @class = "textBox", @placeholder = "Enter College Code", @maxlength = "8", @autocomplete = "off" })<br /><br />
         @Html.LabelFor(model => model.CollegeName)
         @Html.ValidationMessageFor(model => model.CollegeName)<br />
-        @Html.TextBoxFor(model => model.CollegeName, "", new { @class = "textBox", @placeholder = "Enter College Name", @maxlength = "100" })<br /><br />
+        @Html.TextBoxFor(model => model.CollegeName, "", new { @class = "textBox", @placeholder = "Enter College Name", @maxlength = "100", @autocomplete = "off" })<br /><br />
         @Html.LabelFor(model => model.CollegeWebsite)
         @Html.ValidationMessageFor(model => model.CollegeWebsite)<br />
-        @Html.TextBoxFor(model => model.CollegeWebsite, "", new { @class = "textBox", @placeholder = "Enter College website", @maxlength = "50" })<br /><br />
+        @Html.TextBoxFor(model => model.CollegeWebsite, "", new { @class = "textBox", @placeholder = "Enter College website", @maxlength = "50", @autocomplete = "off" })<br /><br />
         <input class="btn-submit" style="margin-left: 5%" type="submit" value="Add Department" />
         @Html.ActionLink("Back to List", "DisplayCollege")
     }

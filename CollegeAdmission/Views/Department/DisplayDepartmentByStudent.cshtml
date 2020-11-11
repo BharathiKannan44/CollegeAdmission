@@ -7,8 +7,12 @@
 {
     TempData.Keep("CollegeCode");
 }
-<center>
-    <h2>Departments</h2>
+
+<div class="form-content">
+    <center>
+        <h2>Departments</h2>
+
+    </center>
     <table>
         <tr>
             <th>
@@ -17,6 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.AvailableSeats)
             </th>
+            <th></th>
         </tr>
 
         @foreach (var item in Model)
@@ -29,7 +34,20 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.AvailableSeats)
                 </td>
+                <td>
+                    <input type="button" class="btn-secondary" value="Apply" onclick="location.href='@Url.Action("Create", "UserApplications", new { code = TempData["CollegeCode"], DeptId = item.DeptId, mailId = HttpContext.Current.User.Identity.Name.ToString()})'" />
+                </td>
             </tr>
         }
     </table>
-</center>
+</div>
+<div>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+                      window.onload = function () {
+                        alert("@ViewBag.Message");
+                       };
+        </script>
+    }
+</div>
